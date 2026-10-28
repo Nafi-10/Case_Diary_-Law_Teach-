@@ -1,0 +1,291 @@
+/* Calm, semantic status colors for the case diary. */
+.case-list-panel {
+  border-color: #dce5da;
+  box-shadow: 0 4px 22px #173b3206;
+  border-radius: 14px;
+  --status-ink: #3e6f52;
+  --status-wash: #f3f8f3;
+  --status-accent: #91b29a;
+  --status-badge: #e4f0e5;
+}
+.case-list-panel .tabs {
+  background: linear-gradient(100deg, #f1f6ef, #fbfcf8 65%);
+  border-bottom-color: #dce5d7;
+}
+.case-list-panel .tabs button {
+  padding: 16px 0 14px;
+  color: #62725f;
+}
+.case-list-panel .tabs button.active {
+  color: #234d39;
+  border-bottom-color: #a88e51;
+  font-weight: 600;
+}
+.case-list-panel .filters {
+  background: #fff;
+  padding-bottom: 16px;
+}
+.case-color-key {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 18px;
+  padding: 0 22px 15px;
+  font-size: 10px;
+  color: #697568;
+  background: white;
+}
+.color-key-title {
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #7c8978;
+}
+.color-key-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--status-ink);
+}
+.color-key-item i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--status-accent);
+  box-shadow: 0 0 0 3px var(--status-wash);
+}
+.case-view-count {
+  margin-left: auto;
+  color: #7d8878;
+}
+.case-list-panel th {
+  background: #edf3e9;
+  color: #4d6653;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  border-top-color: #dce6d5;
+  border-bottom-color: #d3dec9;
+  padding-top: 13px;
+  padding-bottom: 13px;
+}
+.case-list-panel .case-row {
+  background: var(--status-wash);
+}
+.case-list-panel .case-row td {
+  border-bottom: 3px solid white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #4d5c4b;
+}
+.case-list-panel .case-row td:first-child {
+  box-shadow: inset 3px 0 var(--status-accent);
+}
+.case-list-panel .case-row:hover td,
+.case-list-panel .case-row:focus-within td {
+  background: #ffffff35;
+}
+.case-list-panel .case-row:hover td:first-child {
+  box-shadow: inset 4px 0 var(--status-accent);
+}
+.case-list-panel td .case-title {
+  color: #274a35;
+  font-size: 11px;
+}
+.case-list-panel td .subtext {
+  color: #71806b;
+  font-size: 10px;
+}
+.case-list-panel .case-number-link {
+  display: inline-block;
+  padding: 5px 8px;
+  margin-left: -8px;
+  background: #ffffff90;
+  border: 1px solid #dae5d4;
+  border-radius: 5px;
+  font-variant-numeric: tabular-nums;
+}
+.case-list-panel .case-number-link:hover {
+  background: white;
+  border-color: #a5b99e;
+  text-decoration: none;
+}
+.case-type-chip {
+  display: inline-flex;
+  align-items: center;
+  font-size: 9px;
+  color: #65745d;
+  background: #e7eddf;
+  border: 1px solid #dce5d4;
+  border-radius: 4px;
+  padding: 1px 6px;
+  margin-top: 5px;
+  line-height: 1.6;
+}
+.case-type-chip.type-criminal {
+  color: #7b6886;
+  background: #eee8f2;
+  border-color: #e4dce9;
+}
+.case-type-chip.type-family {
+  color: #876b66;
+  background: #f4eae5;
+  border-color: #ecddd7;
+}
+.case-type-chip.type-commercial {
+  color: #516e80;
+  background: #e6edf2;
+  border-color: #d8e3eb;
+}
+.case-type-chip.type-labour {
+  color: #7c744b;
+  background: #f1efdc;
+  border-color: #e5e0c5;
+}
+.case-list-panel .case-row .badge,
+.case-list-panel .mobile-case-card .badge {
+  color: var(--status-ink);
+  background: var(--status-badge);
+  border: 1px solid var(--status-accent);
+  padding: 5px 9px;
+  font-size: 10px;
+}
+.case-hearing {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  padding: 5px 9px;
+  margin-left: -9px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  font-variant-numeric: tabular-nums;
+}
+.case-hearing .cell-date {
+  font-size: 11px;
+  color: inherit;
+}
+.hearing-meta {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 9px;
+  color: #6f7b69;
+}
+.hearing-timing {
+  font-weight: 600;
+  color: inherit;
+}
+.case-hearing.hearing-today {
+  color: #826225;
+  background: #fbefd0;
+  border-color: #eddbaf;
+}
+.case-hearing.hearing-today .hearing-meta {
+  color: #8b6d34;
+}
+.case-hearing.hearing-soon {
+  color: #496b81;
+  background: #eaf2f5;
+  border-color: #d9e6ec;
+}
+.case-hearing.hearing-soon .hearing-meta {
+  color: #60788a;
+}
+.case-hearing.hearing-review {
+  color: #955c4e;
+  background: #faece5;
+  border-color: #efd5ca;
+}
+.case-hearing.hearing-review .hearing-meta {
+  color: #956655;
+}
+.case-list-panel .case-open-button {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  border: 1px solid #dbe4d4;
+  background: #ffffff80;
+  color: #67805b;
+}
+.case-list-panel .case-open-button:hover {
+  background: white;
+  border-color: #9cb48c;
+}
+.case-list-panel .pagination {
+  background: #fcfdf9;
+  border-top-color: #e3e9dc;
+}
+@media (max-width: 1200px) {
+  .case-list-panel td,
+  .case-list-panel th {
+    padding-left: 16px;
+    padding-right: 14px;
+  }
+}
+@media (max-width: 640px) {
+  .case-list-panel .filters {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .case-list-panel .filters .search-field,
+  .case-list-panel .filters select[aria-label="Filter by court"] {
+    grid-column: 1 / -1;
+  }
+  .case-list-panel .filters select,
+  .case-list-panel .filters input[type="date"] {
+    width: 100%;
+    min-width: 0;
+    min-height: 40px;
+    font-size: 11px;
+    padding: 8px;
+  }
+  .case-color-key {
+    padding: 0 16px 14px;
+    gap: 10px 14px;
+  }
+  .color-key-title {
+    flex-basis: 100%;
+  }
+  .case-view-count {
+    display: none;
+  }
+  .case-list-panel .tabs {
+    gap: 0;
+    padding: 0 12px;
+  }
+  .case-list-panel .tabs button {
+    flex: 1;
+  }
+  .case-list-panel .mobile-case-card {
+    background: var(--status-wash);
+    border-left: 3px solid var(--status-accent);
+    border-top: 4px solid white;
+    padding: 17px;
+  }
+  .case-list-panel .mobile-case-card:hover {
+    filter: brightness(1.01);
+  }
+  .case-list-panel .mobile-case-card h3 {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #274a35;
+  }
+  .case-list-panel .mobile-case-card > p {
+    font-size: 11px;
+    color: #64725e;
+  }
+  .case-list-panel .mobile-case-card .case-card-footer {
+    margin-top: 10px;
+  }
+  .case-list-panel .mobile-case-card .case-hearing {
+    margin-left: 0;
+  }
+  .case-list-panel .mobile-case-card .case-type-chip {
+    margin-top: 8px;
+    font-size: 10px;
+  }
+}

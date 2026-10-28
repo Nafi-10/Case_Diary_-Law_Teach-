@@ -1,0 +1,964 @@
+/* Task-focused layouts: one desktop viewport, natural flow on small screens. */
+.compact-auth {
+  grid-template-columns: 0.85fr 1.15fr;
+}
+.compact-auth .auth-story {
+  padding: 34px 10%;
+  gap: 28px;
+}
+.compact-auth .auth-story h2 {
+  font-size: clamp(32px, 3.3vw, 48px);
+}
+.compact-auth .auth-main {
+  padding: 24px 7%;
+  display: flex;
+  flex-direction: column;
+}
+.compact-auth .auth-form-wrap {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  padding: 20px 0;
+}
+.compact-auth .auth-form-wrap h1 {
+  font-size: 28px;
+}
+.compact-auth .auth-form-wrap > p {
+  margin-top: 7px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.compact-auth .auth-demo-note {
+  margin: 16px 0;
+  padding: 10px 12px;
+  color: #526650;
+  font-size: 11px;
+}
+.auth-email-preview > summary {
+  cursor: pointer;
+  font-size: 12px;
+  color: var(--green);
+  padding: 13px 0;
+}
+.auth-email-preview > summary span {
+  color: var(--muted);
+  font-size: 10px;
+  margin-left: 10px;
+}
+.auth-email-preview[open] > summary {
+  margin-bottom: 8px;
+}
+.auth-register .auth-email-preview > summary,
+.auth-recovery .auth-email-preview > summary {
+  display: none;
+}
+.registration-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 16px;
+}
+.registration-full {
+  grid-column: 1 / -1;
+}
+.compact-auth .field {
+  min-width: 0;
+}
+.compact-auth .field > span {
+  font-size: 12px;
+}
+.compact-auth input,
+.compact-auth select {
+  font-size: 12px;
+  padding: 10px 12px;
+}
+.compact-auth .password-input input {
+  padding-right: 40px;
+}
+.compact-auth .password-hint {
+  margin-top: -6px;
+  color: var(--muted);
+  font-size: 10px;
+}
+.compact-auth .terms-check {
+  color: #586650;
+  font-size: 11px;
+}
+.compact-auth .auth-switch {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 18px;
+}
+.compact-auth .auth-form-wrap .auth-legal {
+  margin-top: 14px;
+  font-size: 10px;
+}
+.demo-signin-options {
+  display: grid;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+.demo-signin-card {
+  display: grid;
+  grid-template-columns: 48px 1fr auto;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  text-align: left;
+  border: 1px solid #ccd8ca;
+  border-radius: 12px;
+  padding: 22px 18px;
+  background: white;
+  color: var(--green);
+}
+.demo-signin-card:hover {
+  border-color: #6f9073;
+  background: #f4f8f0;
+  box-shadow: 0 4px 20px #163b3209;
+}
+.demo-role-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: #eaf0e5;
+}
+.demo-signin-card:nth-child(2) .demo-role-icon {
+  background: #f4edda;
+  color: #91783d;
+}
+.demo-role-copy strong {
+  display: block;
+  font-size: 18px;
+}
+.demo-role-copy small {
+  display: block;
+  margin-top: 2px;
+  color: #576c5c;
+  font-size: 11px;
+}
+.demo-role-copy p {
+  font-size: 11px;
+  margin-top: 8px;
+}
+.demo-enter {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.viewport-page {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.viewport-page .page-header {
+  margin-bottom: 0;
+}
+.viewport-page .page-header h1 {
+  font-size: 27px;
+}
+.viewport-page .page-header .eyebrow {
+  font-size: 9px;
+  margin-bottom: 5px;
+}
+.viewport-page .page-header p {
+  margin-top: 5px;
+}
+.viewport-page .panel-header {
+  padding: 15px 18px 12px;
+}
+.viewport-page .panel-body {
+  padding: 0 18px 14px;
+}
+.viewport-page .panel-header h2 {
+  font-size: 14px;
+}
+.viewport-page .notice {
+  margin: 0;
+}
+.compact-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 20px 12px;
+  font-size: 12px;
+  text-align: center;
+  color: var(--muted);
+}
+.compact-empty strong {
+  color: var(--green);
+}
+.compact-empty p {
+  font-size: 11px;
+}
+.paged-items {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+.paged-items-body {
+  flex: 1;
+  min-height: 0;
+}
+.compact-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--border);
+  margin-top: 5px;
+  padding-top: 4px;
+  color: var(--muted);
+  font-size: 11px;
+}
+.compact-pagination > div {
+  display: flex;
+  gap: 5px;
+}
+.compact-pagination .icon-button {
+  width: 29px;
+  height: 27px;
+  border: 1px solid var(--border);
+}
+.compact-pagination button:disabled {
+  opacity: 0.3;
+}
+
+.calendar-page .calendar-layout {
+  gap: 16px;
+  grid-template-columns: minmax(0, 1fr) 300px;
+}
+.calendar-main {
+  display: flex;
+  flex-direction: column;
+}
+.calendar-main > .panel-header {
+  flex-shrink: 0;
+}
+.calendar-main .calendar-nav {
+  margin: 0;
+  padding: 0;
+}
+.calendar-main .calendar-legend {
+  margin: 0;
+  padding: 12px 18px;
+  justify-content: flex-start;
+  gap: 20px;
+}
+.calendar-main .weekday {
+  padding: 8px;
+  color: #65715f;
+}
+.calendar-main .full-calendar {
+  flex: 1;
+  grid-template-rows: 32px repeat(6, minmax(0, 1fr));
+  min-height: 0;
+}
+.calendar-main .calendar-cell {
+  min-height: 0;
+  padding: 5px 7px;
+}
+.calendar-cell.selected-day {
+  background: #f1f6ed;
+  box-shadow: inset 0 0 0 1.5px #7e9467;
+}
+.calendar-cell > .calendar-date {
+  width: 25px;
+  height: 25px;
+  color: #48623e;
+  font-size: 11px;
+}
+.calendar-cell.today > .calendar-date {
+  color: white;
+}
+.calendar-cell > .calendar-day-summary {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  border-radius: 4px;
+  padding: 3px 0;
+  text-align: left;
+  font-size: 10px;
+  color: #46653b;
+}
+.calendar-cell.today > .calendar-day-summary {
+  background: transparent;
+  color: #46653b;
+}
+.calendar-day-summary > span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  line-height: 1.35;
+}
+.calendar-day-summary .day-reminder-count {
+  color: #896a2d;
+}
+.calendar-day-summary .legend-dot {
+  width: 5px;
+  height: 5px;
+}
+.calendar-side {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+.schedule-tabs {
+  display: flex;
+}
+.schedule-tabs button {
+  flex: 1;
+  font-size: 12px;
+}
+.calendar-schedule {
+  flex: 1;
+}
+.calendar-page .hearing-row {
+  padding: 13px 0;
+}
+.schedule-caption {
+  font-size: 11px;
+  padding-bottom: 6px;
+}
+.schedule-reminder {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  padding: 11px;
+  margin-top: 10px;
+  background: #faf5e7;
+  border: 1px solid #eee2bf;
+  color: #796630;
+  border-radius: 7px;
+  font-size: 11px;
+}
+.calendar-help {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 10px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.reports-page .report-grid {
+  gap: 14px;
+}
+.reports-page .filters {
+  padding: 12px 18px;
+  gap: 14px;
+}
+.reports-page .filters .field > span {
+  font-size: 11px;
+}
+.reports-page .filters input,
+.reports-page .filters select {
+  padding: 8px 10px;
+  height: 35px;
+  font-size: 11px;
+}
+.report-source {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  align-self: center;
+  font-size: 10px;
+  color: var(--muted);
+}
+.report-total {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.report-total strong {
+  font-size: 25px;
+  color: var(--green);
+  letter-spacing: -1px;
+  line-height: 1.2;
+}
+.report-total span,
+.report-chart-note {
+  font-size: 11px;
+  color: var(--muted);
+}
+.report-chart-note {
+  margin: 4px 0 16px;
+}
+.reports-page .bar-row {
+  margin-bottom: 10px;
+  gap: 12px;
+}
+.reports-page .bar-row:last-child {
+  margin-bottom: 0;
+}
+.reports-page .bar-row > span:first-child {
+  color: #647359;
+  min-width: 105px;
+  max-width: 140px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.reports-page .bar-track {
+  height: 13px;
+}
+.reports-page .hearing-row {
+  padding: 9px 0;
+}
+.reports-page .hearing-info h3 {
+  font-size: 11px;
+}
+.reports-page .hearing-info p {
+  font-size: 10px;
+  margin-top: 3px;
+}
+.report-grid > .panel {
+  display: flex;
+  flex-direction: column;
+}
+.report-grid > .panel > .panel-body {
+  flex: 1;
+  min-height: 0;
+}
+.report-grid .paged-items {
+  flex: 1;
+}
+.report-grid > .panel:nth-child(n + 2) > .panel-body {
+  display: flex;
+  flex-direction: column;
+}
+.report-chart-note {
+  flex-shrink: 0;
+}
+.compact-pagination {
+  flex-shrink: 0;
+}
+.paged-items-body {
+  flex-shrink: 0;
+}
+
+.billing-notice {
+  font-size: 11px;
+  padding: 10px 13px;
+}
+.billing-overview {
+  display: grid;
+  grid-template-columns: 1fr 1.7fr;
+  gap: 14px;
+}
+.current-plan-summary {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.current-plan-actions {
+  margin-top: 6px;
+}
+.current-plan-actions .button {
+  padding-left: 0;
+}
+.usage-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+.usage-columns .usage-row {
+  border: 0;
+  padding: 8px 0;
+}
+.usage-columns .usage-row > div:first-child {
+  flex-direction: column;
+  gap: 9px;
+}
+.usage-columns .usage-row small {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--green);
+}
+.usage-columns .usage-row:last-child small {
+  font-size: 15px;
+}
+.billing-plans {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.plans-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.plans-heading span {
+  font-size: 11px;
+  color: var(--muted);
+}
+.compact-plans {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}
+.compact-plans .plan-card {
+  padding: 18px 14px 14px;
+  border-radius: 10px;
+}
+.compact-plans .plan-card.recommended {
+  border-radius: 10px;
+  background: #f8fbf5;
+}
+.compact-plans .recommended-label {
+  position: static;
+  border-radius: 4px;
+  height: auto;
+  font-size: 8px;
+  letter-spacing: 1px;
+  padding: 3px 6px;
+  align-self: flex-start;
+  margin: -5px 0 6px;
+}
+.compact-plans .plan-card:not(.recommended) {
+  padding-top: 42px;
+}
+.compact-plans .plan-price {
+  font-size: 27px;
+  margin: 10px 0 12px;
+  white-space: nowrap;
+}
+.compact-plans .plan-price small {
+  display: block;
+  font-size: 10px;
+}
+.compact-plans .plan-card ul {
+  gap: 9px;
+  margin: 0 0 16px;
+  font-size: 11px;
+  color: #5e6d54;
+}
+.compact-plans .plan-card .button {
+  min-height: 34px;
+  padding: 7px 9px;
+  font-size: 11px;
+}
+.billing-footnotes {
+  color: var(--muted);
+}
+.billing-footnotes p {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+}
+.billing-footnotes small {
+  display: block;
+  font-size: 10px;
+  margin-top: 5px;
+}
+.billing-details {
+  margin: 20px 0;
+}
+.billing-details > div {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 12px;
+}
+.billing-details dd {
+  color: var(--muted);
+}
+
+@media (min-width: 1100px) and (min-height: 680px) {
+  .calendar-schedule {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+  .calendar-schedule > .panel-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+  }
+  .calendar-schedule .paged-items {
+    flex: 1;
+  }
+  .calendar-schedule .schedule-caption {
+    flex-shrink: 0;
+  }
+  .viewport-page .paged-items-body {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+  }
+  .compact-workspace .content:has(.billing-page) > .app-footer {
+    display: none;
+  }
+  .compact-workspace .topbar {
+    height: 60px;
+  }
+  .compact-workspace .content {
+    height: calc(100dvh - 60px);
+    padding: 20px 28px 12px;
+    max-width: none;
+    display: flex;
+    flex-direction: column;
+  }
+  .compact-workspace .viewport-page {
+    flex: 1;
+    min-height: 0;
+  }
+  .compact-workspace .app-footer {
+    flex-shrink: 0;
+    margin-top: 10px;
+    padding-top: 7px;
+  }
+  .calendar-page .calendar-layout {
+    flex: 1;
+    min-height: 0;
+  }
+  .calendar-main > .panel-body {
+    overflow-y: auto;
+  }
+  .reports-page .report-grid {
+    flex: 1;
+    min-height: 0;
+    grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+  }
+  .billing-page .billing-plans {
+    flex: 0 0 auto;
+  }
+  .billing-page .compact-plans {
+    flex: 1;
+  }
+}
+@media (min-width: 801px) and (max-height: 1000px) {
+  .sidebar .brand {
+    height: 70px;
+  }
+  .sidebar .workspace-switch {
+    margin-bottom: 16px;
+    padding: 9px 10px;
+  }
+  .sidebar .nav-section {
+    margin-bottom: 14px;
+  }
+  .sidebar .nav-label {
+    margin-bottom: 6px;
+  }
+  .sidebar .nav-link {
+    padding: 8px 13px;
+    margin: 2px 0;
+  }
+  .sidebar .nav-link.active:before {
+    top: 9px;
+  }
+  .sidebar .plan-teaser {
+    margin-bottom: 8px;
+    padding: 10px;
+  }
+  .sidebar .sidebar-profile {
+    padding: 10px 7px;
+  }
+}
+@media (min-width: 1100px) and (min-height: 680px) and (max-height: 760px) {
+  .viewport-page.billing-page {
+    gap: 9px;
+  }
+  .compact-workspace .content {
+    padding: 14px 22px 8px;
+  }
+  .viewport-page {
+    gap: 10px;
+  }
+  .viewport-page .page-header h1 {
+    font-size: 24px;
+  }
+  .viewport-page .page-header .eyebrow {
+    display: none;
+  }
+  .viewport-page .panel-header {
+    padding: 11px 16px 9px;
+  }
+  .viewport-page .panel-body {
+    padding: 0 16px 10px;
+  }
+  .calendar-cell > .calendar-day-summary {
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 7px;
+    font-size: 9px;
+    padding: 1px 0;
+  }
+  .calendar-day-summary .reminder-word {
+    display: none;
+  }
+  .calendar-main .calendar-legend {
+    padding: 8px 16px;
+  }
+  .calendar-page .hearing-row {
+    padding: 10px 0;
+  }
+  .reports-page .filters {
+    padding: 9px 16px;
+  }
+  .reports-page .bar-row {
+    margin-bottom: 8px;
+  }
+  .reports-page .hearing-row {
+    padding: 4px 0;
+  }
+  .reports-page .report-grid {
+    grid-template-rows: minmax(174px, 0.88fr) minmax(216px, 1.12fr);
+  }
+  .reports-page .report-chart-note {
+    margin-bottom: 12px;
+  }
+  .compact-plans .plan-card {
+    padding: 12px 12px 10px;
+  }
+  .compact-plans .plan-card:not(.recommended) {
+    padding-top: 26px;
+  }
+  .compact-plans .recommended-label {
+    line-height: 1.1;
+    padding: 2px 6px;
+    margin: -3px 0 4px;
+  }
+  .compact-plans .plan-price {
+    margin: 7px 0;
+    font-size: 25px;
+  }
+  .compact-plans .plan-card ul {
+    gap: 7px;
+    margin-bottom: 10px;
+    font-size: 10px;
+  }
+  .usage-columns .usage-row {
+    padding-top: 4px;
+  }
+  .current-plan-summary .stat-icon {
+    width: 36px !important;
+    height: 36px !important;
+  }
+  .current-plan-summary h2 {
+    font-size: 21px !important;
+  }
+  .billing-footnotes small {
+    margin-top: 3px;
+  }
+  .billing-page .current-plan-actions .button {
+    min-height: 26px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+}
+@media (min-width: 801px) and (max-height: 760px) {
+  .sidebar .brand {
+    height: 59px;
+  }
+  .sidebar .workspace-switch {
+    margin-bottom: 6px;
+  }
+  .sidebar .nav-section {
+    margin-bottom: 4px;
+  }
+  .sidebar .nav-link {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    font-size: 11px;
+  }
+  .sidebar .plan-teaser {
+    padding: 8px 10px;
+  }
+  .sidebar .plan-teaser p,
+  .sidebar .plan-teaser a {
+    margin-top: 5px;
+  }
+  .sidebar .plan-teaser .progress-track {
+    margin: 6px 0;
+  }
+  .sidebar .sidebar-profile {
+    display: none;
+  }
+  .compact-auth .auth-story {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+  .compact-auth .auth-benefits {
+    gap: 15px;
+    margin-top: 25px;
+  }
+  .compact-auth .auth-form-wrap {
+    padding: 12px 0;
+  }
+  .compact-auth .auth-form-wrap .eyebrow {
+    margin-bottom: 5px;
+  }
+  .compact-auth .auth-form-wrap h1 {
+    font-size: 25px;
+  }
+  .compact-auth .auth-demo-note {
+    margin: 12px 0;
+  }
+  .registration-grid {
+    gap: 10px 14px;
+  }
+  .compact-auth .auth-switch {
+    margin-top: 12px;
+  }
+  .compact-auth .auth-form-wrap .auth-legal {
+    margin-top: 10px;
+  }
+}
+@media (max-width: 1099px) {
+  .calendar-page .calendar-layout {
+    grid-template-columns: 1fr;
+  }
+  .calendar-main .full-calendar {
+    min-height: 550px;
+  }
+  .calendar-side {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .billing-overview {
+    grid-template-columns: 1fr;
+  }
+  .compact-plans {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .report-source {
+    display: none;
+  }
+  .compact-auth .auth-main {
+    padding: 24px 6%;
+  }
+  .demo-signin-card {
+    grid-template-columns: 40px 1fr;
+    gap: 12px;
+    padding: 17px;
+  }
+  .demo-enter {
+    grid-column: 2;
+  }
+  .demo-role-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+@media (max-width: 800px) {
+  .compact-auth {
+    grid-template-columns: 1fr;
+  }
+  .compact-auth .auth-story {
+    display: none;
+  }
+  .compact-auth .auth-main {
+    min-height: 100dvh;
+    padding: 24px;
+  }
+  .compact-auth .auth-form-wrap {
+    margin: auto;
+  }
+}
+@media (max-width: 640px) {
+  .compact-auth .auth-main {
+    padding: 20px;
+  }
+  .compact-auth .auth-form-wrap {
+    margin: 25px auto;
+    padding: 0;
+  }
+  .compact-auth .auth-form-wrap h1 {
+    font-size: 25px;
+  }
+  .registration-grid {
+    grid-template-columns: 1fr;
+  }
+  .compact-auth input,
+  .compact-auth select {
+    font-size: 16px;
+  }
+  .compact-plans {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .compact-plans .plan-card.recommended {
+    margin-top: 0;
+  }
+  .compact-plans .plan-card:not(.recommended) {
+    padding-top: 18px;
+  }
+  .compact-plans .plan-card ul {
+    grid-template-columns: 1fr;
+  }
+  .usage-columns {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .usage-columns .usage-row {
+    padding: 12px 0;
+  }
+  .usage-columns .usage-row > div:first-child {
+    flex-direction: row;
+  }
+  .plans-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .viewport-page .page-header {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .viewport-page .page-header h1 {
+    font-size: 25px;
+  }
+  .reports-page .report-grid {
+    grid-template-columns: 1fr;
+  }
+  .reports-page .filters {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .reports-page .filters .field {
+    flex: 1;
+    min-width: 120px;
+  }
+  .reports-page .filters input[type="date"] {
+    width: 100%;
+  }
+  .calendar-main .calendar-legend {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .calendar-main .full-calendar {
+    display: none;
+  }
+  .calendar-main > .panel-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .calendar-main .calendar-nav {
+    justify-content: space-between;
+  }
+  .calendar-main .header-actions {
+    justify-content: space-between;
+  }
+  .billing-details > div {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .billing-details dd {
+    margin: 0;
+  }
+}
