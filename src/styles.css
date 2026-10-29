@@ -433,9 +433,6 @@ select {
   right: 6px;
   font-size: 8px;
 }
-.mobile-search {
-  display: none;
-}
 .workspace-switch {
   display: flex;
   align-items: center;
@@ -2398,17 +2395,6 @@ td a:hover {
   .sidebar-search {
     display: none;
   }
-  .mobile-search {
-    display: flex;
-    flex: 1 1 auto;
-    min-width: 0;
-    max-width: 320px;
-  }
-  .mobile-search input {
-    width: 100%;
-    min-width: 0;
-    padding: 9px 8px 9px 32px;
-  }
   .topbar-right {
     gap: 14px;
     flex-shrink: 0;
@@ -2497,13 +2483,6 @@ td a:hover {
   }
   .topbar-right {
     gap: 8px;
-  }
-  .mobile-search {
-    max-width: none;
-  }
-  .mobile-search input {
-    font-size: 10px;
-    padding-right: 6px;
   }
   .topbar-divider {
     display: none;

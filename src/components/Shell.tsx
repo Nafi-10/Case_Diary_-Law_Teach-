@@ -59,7 +59,6 @@ export function Shell() {
   const [menu, setMenu] = useState<"account" | "notifications" | null>(null);
   const [query, setQuery] = useState("");
   const sidebarSearchRef = useRef<HTMLInputElement>(null);
-  const mobileSearchRef = useRef<HTMLInputElement>(null);
   const mobileMenuRef = useRef<HTMLButtonElement>(null);
   const popupRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -69,9 +68,10 @@ export function Shell() {
         if (
           window.matchMedia("(max-width: 800px)").matches &&
           !document.querySelector(".sidebar.open")
-        )
-          mobileSearchRef.current?.focus();
-        else sidebarSearchRef.current?.focus();
+        ) {
+          setMobile(true);
+          window.setTimeout(() => sidebarSearchRef.current?.focus(), 0);
+        } else sidebarSearchRef.current?.focus();
       }
       if (e.key === "Escape") {
         setMenu(null);
@@ -317,23 +317,6 @@ export function Shell() {
             <ChevronRight size={11} />
             <strong>{page}</strong>
           </div>
-          <form
-            className="global-search mobile-search"
-            role="search"
-            onSubmit={(e) => {
-              e.preventDefault();
-              navigate(`/cases?q=${encodeURIComponent(query)}`);
-            }}
-          >
-            <Search size={14} />
-            <input
-              ref={mobileSearchRef}
-              aria-label="Search all cases"
-              placeholder="Search anything…"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-            />
-          </form>
           <div className="topbar-right" ref={popupRef}>
             <span
               className="demo-badge"
