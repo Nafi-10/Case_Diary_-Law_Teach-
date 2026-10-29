@@ -693,6 +693,9 @@ select {
 .mobile-menu {
   display: none;
 }
+.mobile-brand {
+  display: none;
+}
 .content {
   max-width: 1600px;
   margin: 0 auto;
@@ -2385,6 +2388,42 @@ td a:hover {
   .mobile-menu {
     display: inline-flex;
   }
+  .mobile-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    min-width: 0;
+    margin-left: 4px;
+    color: var(--green);
+  }
+  .mobile-brand-mark {
+    display: grid;
+    width: 30px;
+    height: 30px;
+    flex: 0 0 30px;
+    place-items: center;
+    border: 1px solid #d5c58f;
+    border-radius: 9px;
+    color: #d8c58a;
+    background: linear-gradient(145deg, #174638, #0d3028);
+    box-shadow: 0 2px 6px #123b321f, inset 0 1px #ffffff20;
+  }
+  .mobile-brand-name {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: -0.45px;
+    line-height: 1.15;
+    white-space: nowrap;
+  }
+  .mobile-brand-name small {
+    display: block;
+    margin-top: 3px;
+    color: #839284;
+    font-size: 6px;
+    font-weight: 600;
+    letter-spacing: 1.05px;
+  }
   .topbar {
     height: 65px;
   }
@@ -2489,6 +2528,22 @@ td a:hover {
   }
   .topbar-context {
     gap: 4px;
+  }
+  .mobile-brand {
+    gap: 6px;
+    margin-left: 2px;
+  }
+  .mobile-brand-mark {
+    width: 28px;
+    height: 28px;
+    flex-basis: 28px;
+  }
+  .mobile-brand-name {
+    font-size: 12px;
+  }
+  .mobile-brand-name small {
+    font-size: 5.5px;
+    letter-spacing: 0.9px;
   }
   .demo-badge {
     font-size: 8px;

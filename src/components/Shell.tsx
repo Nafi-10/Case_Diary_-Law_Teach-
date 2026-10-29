@@ -312,6 +312,15 @@ export function Shell() {
             >
               <Menu size={20} />
             </button>
+            <Link to="/" className="mobile-brand" aria-label="Case Diary home">
+              <span className="mobile-brand-mark">
+                <Scale size={18} strokeWidth={1.8} />
+              </span>
+              <span className="mobile-brand-name">
+                Case Diary
+                <small>CLARITY. EVERY DAY.</small>
+              </span>
+            </Link>
             <House size={14} />
             <span>Workspace</span>
             <ChevronRight size={11} />
