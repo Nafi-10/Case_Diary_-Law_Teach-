@@ -58,14 +58,20 @@ export function Shell() {
   const [mobile, setMobile] = useState(false);
   const [menu, setMenu] = useState<"account" | "notifications" | null>(null);
   const [query, setQuery] = useState("");
-  const searchRef = useRef<HTMLInputElement>(null);
+  const sidebarSearchRef = useRef<HTMLInputElement>(null);
+  const mobileSearchRef = useRef<HTMLInputElement>(null);
   const mobileMenuRef = useRef<HTMLButtonElement>(null);
   const popupRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key === "k") {
         e.preventDefault();
-        searchRef.current?.focus();
+        if (
+          window.matchMedia("(max-width: 800px)").matches &&
+          !document.querySelector(".sidebar.open")
+        )
+          mobileSearchRef.current?.focus();
+        else sidebarSearchRef.current?.focus();
       }
       if (e.key === "Escape") {
         setMenu(null);
@@ -152,6 +158,25 @@ export function Shell() {
         <Link to="/" onClick={() => setMobile(false)}>
           <Brand />
         </Link>
+        <form
+          className="global-search sidebar-search"
+          role="search"
+          onSubmit={(e) => {
+            e.preventDefault();
+            navigate(`/cases?q=${encodeURIComponent(query)}`);
+            setMobile(false);
+          }}
+        >
+          <Search size={14} />
+          <input
+            ref={sidebarSearchRef}
+            aria-label="Search all cases"
+            placeholder="Search anything…"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
+          <kbd>⌘ K</kbd>
+        </form>
         <button
           className="workspace-switch"
           onClick={() => {
@@ -292,25 +317,24 @@ export function Shell() {
             <ChevronRight size={11} />
             <strong>{page}</strong>
           </div>
+          <form
+            className="global-search mobile-search"
+            role="search"
+            onSubmit={(e) => {
+              e.preventDefault();
+              navigate(`/cases?q=${encodeURIComponent(query)}`);
+            }}
+          >
+            <Search size={14} />
+            <input
+              ref={mobileSearchRef}
+              aria-label="Search all cases"
+              placeholder="Search anything…"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+            />
+          </form>
           <div className="topbar-right" ref={popupRef}>
-            <form
-              className="global-search"
-              role="search"
-              onSubmit={(e) => {
-                e.preventDefault();
-                navigate(`/cases?q=${encodeURIComponent(query)}`);
-              }}
-            >
-              <Search size={14} />
-              <input
-                ref={searchRef}
-                aria-label="Search all cases"
-                placeholder="Search anything…"
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-              />
-              <kbd>⌘ K</kbd>
-            </form>
             <span
               className="demo-badge"
               title="Sample records. Changes stay in this tab and reset on refresh."
